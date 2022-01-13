@@ -1,0 +1,8 @@
+# ping test for target machines.
+
+-
+  name: Test connectivity to target hosts
+  hosts: all
+  tasks:
+    - name: Ping test
+      ping:

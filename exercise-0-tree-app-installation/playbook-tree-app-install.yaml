@@ -1,0 +1,16 @@
+
+- name: Install Tree
+  hosts: all
+  tasks:
+    - name: Install Tree application on ubuntu
+      apt:
+        name: tree
+        state: present
+        when: ansible_os_family == "Debian" or
+              ansible_distribution_version == "20.4"
+
+    - name: Install Tree application on CentOS
+      yum:
+        name: tree
+        state: present
+        when: ansible_os_family == "Debian" or "SUSE"

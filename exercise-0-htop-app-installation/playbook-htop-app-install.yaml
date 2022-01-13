@@ -1,0 +1,16 @@
+
+- name: Install Nmap on Ubuntu or CentOS and SUSE
+  hosts: all
+  tasks:
+    - name: Install Nmap application on ubuntu
+      apt:
+        name: 0.
+        state: present
+        when: ansible_os_family == "Debian" or
+              ansible_distribution_version == "20.4"
+
+    - name: Install Nmap application on CentOS
+      yum:
+        name: nmap
+        state: present
+        when: ansible_os_family == "Debian" or "SUSE"

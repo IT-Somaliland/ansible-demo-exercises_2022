@@ -1,0 +1,8 @@
+# ping test for target machines.
+
+-
+  name: Test service availibility from the target servers
+  hosts: all
+  tasks:
+    - name: sshd service availibility
+      #service:
